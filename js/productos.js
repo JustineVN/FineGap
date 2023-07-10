@@ -141,9 +141,12 @@ createApp({
   data() {
     return {
       productos: [],
-      url: 'https://solmendel.pythonanywhere.com/productos',
+      //url:'http://localhost:5000/productos',
+      // si el backend esta corriendo local usar localhost 5000(si no lo subieron a pythonanywhere)
+      url: 'https://solmendel.pythonanywhere.com/productos', // si ya lo subieron a pythonanywhere
       error: false,
       cargando: true,
+      /*atributos para el guardar los valores del formulario */
       id: 0,
       nombre: "",
       imagen: "",
@@ -152,8 +155,8 @@ createApp({
     };
   },
   methods: {
-    fetchData() {
-      fetch(this.url)
+    fetchData(url) {
+      fetch(url)
         .then(response => response.json())
         .then(data => {
           this.productos = data;
@@ -170,7 +173,7 @@ createApp({
         method: 'DELETE',
       };
       fetch(url, options)
-        .then(res => res.text())
+        .then(res => res.text()) // or res.json()
         .then(res => {
           location.reload();
         });
@@ -200,7 +203,6 @@ createApp({
     },
   },
   created() {
-    this.fetchData();
+    this.fetchData(this.url);
   },
 }).mount('#app');
-
