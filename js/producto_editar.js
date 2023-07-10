@@ -1,4 +1,4 @@
-/*console.log(location.search); // lee los argumentos pasados a este formulario
+console.log(location.search); // lee los argumentos pasados a este formulario
 var id = location.search.substr(4);
 console.log(id);
 
@@ -58,9 +58,9 @@ createApp({
     created() {
         this.fetchData(this.url);
     },
-}).mount('#app'); */
+}).mount('#app');
 
-console.log(location.search); // Imprime en la consola los argumentos pasados a este formulario
+/*console.log(location.search); // Imprime en la consola los argumentos pasados a este formulario
 var id = location.search.substr(4); // Obtiene el valor del argumento 'id' de la URL
 console.log(id);
 const { createApp } = Vue;
@@ -133,4 +133,4 @@ createApp({
   },
   /* Posteriormente, se utiliza el método mount("#app") para montar la instancia de Vue en el elemento HTML con el id "app". Esto permite que la instancia de Vue controle y renderice el contenido dentro de ese elemento HTML.
   */
-}).mount("#app");
+}).mount("#app"); */
