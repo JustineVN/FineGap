@@ -141,7 +141,7 @@ createApp({
   data() {
     return {
       productos: [],
-      url: 'http://solmendel.pythonanywhere.com/productos',
+      url: 'https://solmendel.pythonanywhere.com/productos',
       error: false,
       cargando: true,
       id: 0,
@@ -152,8 +152,8 @@ createApp({
     };
   },
   methods: {
-    fetchData(url) {
-      fetch(url)
+    fetchData() {
+      fetch(this.url)
         .then(response => response.json())
         .then(data => {
           this.productos = data;
@@ -164,13 +164,13 @@ createApp({
           this.error = true;
         });
     },
-    eliminar(id) {
-      const url = this.url + '/' + String(id);
+    eliminar(producto) {
+      const url = this.url + '/' + producto;
       var options = {
         method: 'DELETE',
       };
       fetch(url, options)
-        .then(res => res.text()) // or res.json()
+        .then(res => res.text())
         .then(res => {
           location.reload();
         });
@@ -200,7 +200,7 @@ createApp({
     },
   },
   created() {
-    this.fetchData(this.url);
+    this.fetchData();
   },
 }).mount('#app');
 
