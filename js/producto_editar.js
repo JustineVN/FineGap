@@ -6,12 +6,12 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            id: id,
+            id: 0,
             nombre: "",
             imagen: "",
             stock: 0,
             precio: 0,
-            url: '',
+            url: 'https://solmendel.pythonanywhere.com/productos/' + id,
         };
     },
     methods: {
@@ -56,4 +56,6 @@ createApp({
         }
     },
     created() {
-        this.url = 'http://solmendel.pythonanywhere.com/productos/' + this
+        this.fetchData(this.url);
+    },
+}).mount('#app');
