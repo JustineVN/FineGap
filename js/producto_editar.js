@@ -11,7 +11,7 @@ createApp({
             imagen: "",
             stock: 0,
             precio: 0,
-            url: 'http://mcerda.pythonanywhere.com/productos/' + id,
+            url: 'https://solmendel.pythonanywhere.com/productos/' + id,
         };
     },
     methods: {
