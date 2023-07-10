@@ -60,7 +60,7 @@ createApp({
     },
 }).mount('#app'); */
 
-es esto console.log(location.search); // lee los argumentos pasados a este formulario
+console.log(location.search); // lee los argumentos pasados a este formulario
 var id = location.search.substr(4);
 console.log(id);
 
