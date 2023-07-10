@@ -60,7 +60,7 @@ createApp({
     },
 }).mount('#app'); */
 
-console.log(location.search); // lee los argumentos pasados a este formulario
+es esto console.log(location.search); // lee los argumentos pasados a este formulario
 var id = location.search.substr(4);
 console.log(id);
 
@@ -68,12 +68,12 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            id: id,
+            id: 0,
             nombre: "",
             imagen: "",
             stock: 0,
             precio: 0,
-            url: '',
+            url: 'https://solmendel.pythonanywhere.com/productos/' + id,
         };
     },
     methods: {
@@ -118,4 +118,6 @@ createApp({
         }
     },
     created() {
-        this.url = 'http://solmendel.pythonanywhere.com/productos/' + this
+        this.fetchData(this.url);
+    },
+}).mount('#app');
